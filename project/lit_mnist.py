@@ -67,8 +67,8 @@ def cli_main():
     # ------------
     # data
     # ------------
-    dataset = MNIST('', train=True, download=True, transform=transforms.ToTensor())
-    mnist_test = MNIST('', train=False, download=True, transform=transforms.ToTensor())
+    dataset = MNIST('/media/data', train=True, download=True, transform=transforms.ToTensor())
+    mnist_test = MNIST('/media/data', train=False, download=True, transform=transforms.ToTensor())
     mnist_train, mnist_val = random_split(dataset, [55000, 5000])
 
     train_loader = DataLoader(mnist_train, batch_size=args.batch_size)
